@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Nothing Special</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Potta+One&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<div class="main" id="main">
+		<div class="container" id="container">
+			<span class="txt" id="heading">The current time is...</span>
+			<span class="txt" id="time"></span>
+		</div>
+		<button class="change" id="btn1" onclick="changeBg()">Change background Color</button>
+		<button class="change" id="btn2" onclick="changeBrTxt()">Change Text and Border Color</button>
+
+	</div>
+
+	<script>
+		function update() {
+			let date = new Date();
+			let time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+			document.getElementById('time').innerHTML = time;
+		}
+		setInterval(update, 1000);
+		function changeBg() {
+			let value = prompt("Enter your background color here :");
+			document.getElementById('main').style.backgroundColor = value;
+			document.getElementById('container').style.backgroundColor = value;
+			document.getElementById('btn1').style.backgroundColor = value;
+			document.getElementById('btn2').style.backgroundColor = value;
+			
+		}
+		function changeBrTxt() {
+			let value = prompt("Enter yout text and border color here :");
+			document.getElementById("heading").style.color = value;
+			document.getElementById("time").style.color = value;
+			document.getElementById("container").style.borderColor = value;
+			document.getElementById('btn1').style.borderColor = value;
+			document.getElementById('btn2').style.borderColor = value;
+			document.getElementById('btn1').style.color = value;
+			document.getElementById('btn2').style.color = value;
+		}
+
+	</script>
+</body>
+
+</html>
